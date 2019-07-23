@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-toolbar color="tertiary">
+  
+    <ion-row>
+      
+
+      <ion-col size="4">
+        <ion-icon size="large" name="arrow-back" (click)="goMain()"></ion-icon>
+    </ion-col>
+    
+    <ion-col style="padding-top: 5px;" class="pd-top-15 small" size="4" text-center>
+      <h4 style="margin-top: 10px; font-size: 10pt;">MASTER CLASS</h4>
+    </ion-col>
+    
+      <ion-col size="4">
+      </ion-col>
+    
+    </ion-row>
+  
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content style="--background: #EEEEEE;">
+  <ion-card padding *ngFor="let MasterClass of todo$masterclass| async" >
+
+    <ion-card-header>
+      <ion-card-title> {{MasterClass.nome}} </ion-card-title>
+      <ion-card-subtitle> Palestrante : {{MasterClass.palestrante}} </ion-card-subtitle>
+      <ion-card-subtitle> Dia/Horário: {{MasterClass.data}} | {{MasterClass.horario}} </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h2> <strong> Local : </strong> </h2> <p> {{MasterClass.local}} </p>
+      <h2> <strong>Currículo :</strong> </h2> <p> {{ MasterClass.curriculo}} </p>        
+    </ion-card-content>
+    </ion-card>
+
+</ion-content>

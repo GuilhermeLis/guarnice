@@ -1,0 +1,114 @@
+<ion-header style="background: #EEEEEE;">
+    <ion-row style="margin-top: 0px; background: #B81C1C; margin-bottom: 10px;">
+        <ion-col size="4">
+            <ion-icon style="color: #fff;" size="large" name="arrow-back" (click)="goMain()"></ion-icon>
+        </ion-col>
+        <ion-col style="padding-top: 5px;" class="pd-top-15 small" size="4" text-center>
+            <h4 style="margin: 5px; color: #fff;">FILMES</h4>
+        </ion-col>
+        <ion-col size="4"></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" text-center>
+        <ion-label *ngIf="choice" style="color: #555">ESCOLHA UMA CATEGORIA</ion-label>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col size="12">
+        <ion-segment color="danger" [(ngModel)] = "movies">
+          <ion-segment-button  (click)="loadingMovies()" value="nComp" checked>
+            <ion-label>Não Competitivos</ion-label>
+          </ion-segment-button>
+          <ion-segment-button (click)="loadingMovies()" value="comp">
+            <ion-label>Competitivos</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content style="--background: #EEEEEE;">
+ <div [ngSwitch] = "movies">
+<div class="mostraComp" *ngSwitchCase="'nComp'">
+  <div style="padding-right: 10px; padding-left: 10px;" *ngFor="let filme of todo$ | async"> 
+      <ion-row>
+        <ion-col size="6" >
+          <h4 style="margin: 0px;">{{filme.name}}</h4>
+        </ion-col>
+        <ion-col size="6" >
+            <p style="text-align: right; margin: 0px;">{{filme.categoria}}| {{filme.genero}}</p>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col size="12" >
+              <p style="text-align: left; margin: 0px;">{{filme.origin}} | {{filme.duracao}} | {{filme.idade}} </p>
+            </ion-col>
+        </ion-row>
+
+      <ion-row>
+          <ion-col size="12">
+              <img [src] = "filme.imgURL"/>
+            </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          {{filme.data}} |
+        </ion-col>
+        <ion-col size="4">
+            {{filme.hora}} |
+        </ion-col>
+        <ion-col size="4">
+            {{filme.local}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col size="12">
+            <p style="margin-top: 0px;">Sinopse: {{filme.sinopse}}</p>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col size="12">
+            <p style="margin-top: 0px;">Dirgido por: {{filme.direcao}} | Produzido no ano de: {{filme.criacao}}</p>
+          </ion-col>
+      </ion-row>
+  </div>
+</div>
+
+
+<div class="mostraNComp" *ngSwitchCase="'comp'"> 
+  <div style="padding-right: 10px; padding-left: 10px;" *ngFor="let filme of todo2$ | async"> 
+    <ion-row>
+      <ion-col size="6" >
+        <h4 style="margin: 0px;">{{filme.name}}</h4>
+      </ion-col>
+      <ion-col size="6" >
+          <p style="text-align: right; margin: 0px;">{{filme.categoria}}| {{filme.genero}}</p>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size="12" >
+            <p style="text-align: left; margin: 0px;">{{filme.origin}} | {{filme.duracao}} | {{filme.idade}} </p>
+          </ion-col>
+      </ion-row>
+
+    <ion-row>
+        <ion-col size="12">
+            <img [src] = "filme.imgURL"/>
+          </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size="12">
+          <p style="margin-top: 0px;">Sinopse: {{filme.sinopse}}</p>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size="12">
+          <p style="margin-top: 0px;">Dirgido por: {{filme.direcao}} | Produzido no ano de: {{filme.criacao}}</p>
+        </ion-col>
+    </ion-row>
+</div>
+</div>
+</div> 
+</ion-content>

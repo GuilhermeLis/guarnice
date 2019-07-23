@@ -1,0 +1,106 @@
+// Font Size
+.small{
+    font-size: small;
+}
+.bg{
+    --background: radial-gradient(#fff 12%, #E0E1E0) !important;
+}
+
+
+// Transparency
+
+// Align
+.center{
+    text-align: center;
+}
+
+// Margin
+.mg-top-5{
+    margin-top: 5px;
+}
+.mg-top-10{
+    margin-top: 10px;
+}
+.mg-top-15{
+    margin-top: 15px;
+}
+.mg-top-20{
+    margin-top: 20px;
+}
+.mg-top-30{
+    margin-top: 30px;
+}
+
+// Padding
+.no-padding {
+    padding: 0px !important;
+}
+.pd-top-5{
+    padding-top: 5px;
+}
+.pd-top-10{
+    padding-top: 10px;
+}
+.pd-top-20{
+    padding-top: 20px;
+}
+.pd-top-50{
+    padding-top: 50px;
+}
+.pd-top-100{
+    padding-top: 100px;
+}
+.pd-top-180{
+    padding-top: 180px;
+}
+.pd-top-200{
+    padding-top: 200px;
+}
+
+// Image
+.img {
+    height: 60%;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+}
+
+.imgC {
+    height: 80%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.img2 {
+    height: 70px;
+    width: 100%;
+}
+
+// Forms
+.border{
+    --padding-start: 40px;
+    --padding-end: 40px;
+    --background:rgba(0,0,0,0);
+}
+
+// Buttons
+.square{
+    --border-radius: 0%;
+    --padding-start: 100px;
+    --padding-end: 100px;
+}
+
+// Colors
+.red {
+    color: red;
+}
+.forgotPass{
+    font-size: 10pt;
+    text-align: left;
+    text-decoration: underline;
+    margin-top: 5px;
+    margin-left: 33px;
+}

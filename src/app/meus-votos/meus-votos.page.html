@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-toolbar>  
+    
+    <ion-row>
+
+      <ion-col size="4">
+        <ion-button float-left size="small" color="secondary" (click)="goMain()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-col>
+      
+      <ion-col class="pd-top-15 small" size="4" text-center>
+        VOTOS
+      </ion-col>
+
+      <ion-col size="4">
+      </ion-col>
+
+    </ion-row>
+        
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content center>
+
+  <ion-list>
+
+    <ion-item *ngFor="let voto of votos; let i = index" padding>
+
+        <ion-avatar>
+          <ion-img src="../assets/lulalivre.jpg"></ion-img>
+        </ion-avatar>
+        
+        <h1 float-left>
+          {{voto}}      
+        </h1>
+
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

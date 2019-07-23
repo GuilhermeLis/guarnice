@@ -1,0 +1,177 @@
+<ion-content padding center text-center class="bg">
+
+  <!-- LOGIN (Só corregará se login=true) -->
+  <div *ngIf="login">
+
+    <!-- IMAGE -->
+    <ion-row>
+      <ion-col>
+          <ion-img src="../assets/GUARNICE.png" class="img"></ion-img>  
+      </ion-col>
+    </ion-row>
+
+    <!-- <div class="pd-top-100">
+      <ion-img src="../assets/GUARNICE.png" class="img"></ion-img>
+    </div> -->
+
+    <!-- CONTAINER DE LOGIN-->
+    <div class="pd-top-20">
+
+      <!-- FORMS -->
+      <ion-item class="border">
+        <ion-label class="small">E-mail</ion-label>
+        <ion-input [(ngModel)]="emailLogin"></ion-input>
+      </ion-item>
+      <ion-item class="border">
+        <ion-label class="small">Senha</ion-label>
+        <ion-input [(ngModel)]="passwordLogin" type="password"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col class="forgotPass" (click)="goNewPass()">
+            Esqueci minha senha
+        </ion-col>
+      </ion-row>
+      <div class="pd-top-10 small red" *ngIf="fail">
+        Senha / Email incorreto(a), tente novamente.
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="pd-top-20">
+        <ion-button (click)="loginuser()" class="square" color="dark">
+          ENTRAR
+        </ion-button>
+      </div>
+      <div class="pd-top-10 small" (click)="goRegister()">
+        Cadastre-se
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- REGISTER (Só corregará se register=true)-->
+  <div *ngIf="register">
+
+    <!-- IMAGE -->
+      <ion-img src="../assets/GUARNICE L.png" class="imgC"></ion-img>
+
+    <!-- CONTAINER DE CADASTRO -->
+    <div class="pd-top-20">
+
+      <!-- FORMS -->
+      <ion-item class="border">
+        <ion-label class="small">Nome</ion-label>
+        <ion-input [(ngModel)]="name"></ion-input>
+      </ion-item>
+
+      <ion-item class="border">
+        <ion-label class="small">Sobrenome</ion-label>
+        <ion-input [(ngModel)]="sobrenome"></ion-input>
+      </ion-item>
+
+      <ion-item class="border">
+        <ion-label class="small">Idade</ion-label>
+        <ion-input [(ngModel)]="idade"></ion-input>
+      </ion-item>
+
+      <ion-item class="border">
+        <ion-label  class="small">E-mail</ion-label>
+        <ion-input [(ngModel)]="email" type="email"></ion-input>
+      </ion-item>
+
+      <ion-item class="border">
+        <ion-label class="small">Senha</ion-label>
+        <ion-input  [(ngModel)]="senha" type="password"></ion-input>
+      </ion-item>
+
+      <ion-item class="border">
+        <ion-label class="small">Repetir senha</ion-label>
+        <ion-input type="password" [(ngModel)]="senha2"></ion-input>
+      </ion-item>
+
+      <ion-item class="border">
+        <ion-label class="small">Credencial</ion-label>
+        <ion-select [interfaceOptions]="customPopoverOptions" [(ngModel)]="credencial" interface="popover" class="small" placeholder="Selecionar" okText="OK" cancelText="Cancelar">
+          <ion-select-option>Cinéfilo(a)</ion-select-option>
+          <ion-select-option>Espectador(a)</ion-select-option>
+          <ion-select-option>Estudante</ion-select-option>
+          <ion-select-option>Realizador(a)</ion-select-option>
+          <ion-select-option>Pesquisador(a)</ion-select-option>
+          <ion-select-option>Jornalista</ion-select-option>
+          <ion-select-option>Crítico</ion-select-option>
+          <ion-select-option>Produtor(a)</ion-select-option>
+          <ion-select-option>Diretor(a)</ion-select-option>
+          <ion-select-option>Ator/Atriz</ion-select-option>
+          <ion-select-option>Outro</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="border">
+        <ion-label class="small">Onde conheceu o Guarnicê</ion-label>
+        <ion-select [interfaceOptions]="customPopoverOptions" [(ngModel)]="origin" interface="popover" class="small" placeholder="Selecionar" okText="OK" cancelText="Cancelar">
+          <ion-select-option>Facebook</ion-select-option>
+          <ion-select-option>Instagram</ion-select-option>
+          <ion-select-option>Televisão</ion-select-option>
+          <ion-select-option>UFMA</ion-select-option>
+          <ion-select-option>Indicação de amigos</ion-select-option>
+          <ion-select-option>Outros</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="pd-top-10 small red" *ngIf="cadastroSenhaFail">
+        Senhas não combinam.
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="pd-top-20">
+        <ion-button (click)="signin()" class="square" color="dark">
+          CADASTRAR
+        </ion-button>
+      </div>
+      <div class="pd-top-10 small" (click)="goLogin()">
+        Voltar
+      </div>
+
+    </div>
+
+    <!-- IMAGE -->
+    <div class="pd-top-20">
+      <ion-img src="../assets/GUARNICE 2.png" class="img2"></ion-img>
+    </div>
+
+  </div>
+
+  <!-- Tela pra recuperar a senha-->
+  <div *ngIf="newpass">
+
+    <!-- IMAGE -->
+    <div class="pd-top-50">
+      <ion-img src="../assets/GUARNICE.png" style="margin-top: 10px !important;" class="img"></ion-img>
+    </div>
+
+    <div class="pd-top-50 small">
+      Digite seu email para recuperação da senha
+    </div>
+
+    <ion-item class="pd-top-50 border">
+        <ion-label class="small">E-mail</ion-label>
+        <ion-input [(ngModel)]="emailRecuperacao"></ion-input>
+    </ion-item>
+
+    <div class="pd-top-50">
+      <ion-button (click)="sendMail()" class="square" color="dark">
+        ENVIAR
+      </ion-button>
+    </div>
+
+    <div class="pd-top-10 small" (click)="goLogin()">
+      Voltar
+    </div>
+
+    <!-- IMAGE -->
+    <div class="pd-top-20">
+      <ion-img src="../assets/GUARNICE 2.png" class="img2"></ion-img>
+    </div>
+
+  </div>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-app>
+
+  <ion-menu contentId="content" side="start" menuId="sideMenu" [disabled] ='menuCondition'>
+
+    <ion-content>
+
+      <ion-item class="pd-top-10">
+        <p>MEU GUARNICE</p>
+      <ion-menu-button slot="end" autoHide="false"></ion-menu-button>
+        
+      </ion-item>
+
+
+      <ion-row>
+        <ion-col *ngIf="profileUrl == null">
+          <img style="border-radius: 50%; margin-left: auto; margin-right: auto; display: flex; max-width: 60%;" src="../assets/profile-default.jpg"/>
+        </ion-col>
+        <ion-col *ngIf="profileUrl != null">
+          <img style="border-radius: 50%; margin-left: auto; margin-right: auto; display: flex; max-width: 60%;" [src]="profileUrl | async"/>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p style="text-decoration: underline; text-align: center; font-size: 10pt; margin-top:0px;" (click) = "presentActionSheet()"><ion-icon name="create"></ion-icon>Alterar foto</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-list>
+        
+        <!-- <ion-item>
+          <div (click)="goMeusVotos()">
+            <ion-icon name="star-half" slot="start"></ion-icon>
+            Meus votos
+          </div>
+        </ion-item> -->
+
+        <ion-item>
+          <div (click)="goAssinados()">
+            <ion-icon name="pricetag" slot="start"></ion-icon>
+            Minhas inscrições
+          </div>
+        </ion-item>
+
+        <ion-item>
+            <div (click)="goLogout()">
+              <ion-icon name="log-out" slot="start"></ion-icon>
+              Sair
+            </div>
+          </ion-item>
+
+      </ion-list>
+
+    </ion-content>
+
+  </ion-menu>
+
+  <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-app>

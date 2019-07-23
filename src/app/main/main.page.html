@@ -1,0 +1,107 @@
+<!-- SIMULÇÃO DE PÁGINA PRINCIPAL -->
+<ion-header>
+  <div *ngIf="isFlash == false">
+  
+  <ion-toolbar color="success">
+    
+    <ion-row>
+          
+      <ion-col size="4">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-col>     
+
+      <ion-col class="pd-top-15 small" size="4" text-center>
+        PRINCIPAL
+      </ion-col>
+      
+      <ion-col size="4">      
+        <!-- <ion-button float-right size="small" color="danger" (click)="goLogout()">
+          <ion-icon name="log-out"></ion-icon>
+        </ion-button> -->
+      </ion-col>        
+              
+    </ion-row>
+
+  </ion-toolbar>
+  </div>
+</ion-header>
+
+<!-- CONTEÚDO PRINCIPAL -->
+
+<ion-content center text-center color="secondary">
+  <div *ngIf="isFlash == false">
+    <!-- IMAGE -->
+    <div class="pd-top-15">
+      <ion-img src="../assets/GUARNICE.png" class="img"></ion-img>
+    </div>
+
+    <ion-row class="pd-top-10">    
+
+      <ion-col size="4">
+        <div (click)="goFilmes()" class="pd-top-10 radial" style="background-color:#a54239">
+          <ion-icon name="videocam" class="large"></ion-icon>
+        </div>
+        <p class="small">FILMES</p>
+      </ion-col>
+
+      <ion-col size="4">
+        <div  (click)="goProgram()" class="pd-top-10 radial" style="background-color:#e2b571">
+          <ion-icon name="time" class="large"></ion-icon>
+        </div>
+        <p class="small">PROGRAMAÇÃO</p>
+      </ion-col>
+
+     <!-- <ion-col size="4">
+        <div (click)="goOficinas()" class="pd-top-10 radial" style="background-color:#e58c18">
+          <ion-icon name="copy" class="large"></ion-icon>
+        </div>
+        <p class="small">OFICINAS</p>
+      </ion-col>
+    -->
+      <!-- <ion-col size="4">
+        <div (click)="goMostra()" class="pd-top-10 radial" style="background-color:">
+          <ion-icon name="film" class="large"></ion-icon>
+        </div>
+        <p class="small">MOSTRA COMPETITIVA</p>
+      </ion-col> -->
+
+     
+
+      <ion-col size="4">
+        <div (click)="goMasterClass()" class="pd-top-10 radial" style="background-color:#869183">
+          <ion-icon name="pricetags" class="large"></ion-icon>
+        </div>
+        <p class="small">MASTER CLASS</p>
+      </ion-col>
+
+      <ion-col size="2"></ion-col>
+
+      <ion-col size="4">
+        <div (click)="goJuri()" class="pd-top-10 radial" style="background-color:#e9d179">
+          <ion-icon name="people" class="large"></ion-icon>
+        </div>
+        <p class="small">JÚRI POPULAR</p>
+      </ion-col>
+
+      <ion-col size="4">
+        <div (click)="goMoreV()" class="pd-top-10 radial" style="background-color:#98d1e4">
+          <ion-icon name="stats" class="large"></ion-icon>
+        </div>
+        <p class="small">MAIS VOTADOS</p>
+      </ion-col>
+
+      <ion-col size="2"></ion-col>
+
+    </ion-row>
+
+    <!-- IMAGE -->
+    <div class="pd-top-10" style="margin-top: 50px;">
+      <ion-img src="../assets/GUARNICE 2.png" class="img2"></ion-img>
+    </div>
+  </div>
+
+  <div *ngIf="isFlash == true">
+    <img src="../../assets/patrocinio.jpg"/>
+  </div>
+    
+</ion-content>

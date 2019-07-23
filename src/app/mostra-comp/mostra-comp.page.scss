@@ -1,0 +1,55 @@
+// Buttons
+.square{
+    --border-radius: 0%;
+    --padding-start: 20px;
+    --padding-end: 20px;
+}
+// Padding
+.pd-top-0{
+    padding-top: 0px;
+}
+.pd-top-5{
+    padding-top: 5px;
+}
+.pd-top-15{
+    padding-top: 15px;
+}
+.pd-top-50{
+    padding-top: 50px;
+}
+// Font Size
+.small{
+    font-size: small;
+    margin: 0;
+}
+// IMAGE
+.imgMovie {
+    height: 80px;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+.img {
+    height: 80px;
+    width: 100%;
+}
+
+[cards] {
+    .grid-full ion-col {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+        padding: 5px 0;
+    }
+    .row {
+        padding: 0;
+    }
+    .col {
+        padding: 5px;
+    }
+    .card {
+        margin: auto;
+        padding: 14px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
+        border-radius: 2px;
+    }
+}

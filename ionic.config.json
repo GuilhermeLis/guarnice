@@ -1,0 +1,7 @@
+{
+  "name": "guarnice",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

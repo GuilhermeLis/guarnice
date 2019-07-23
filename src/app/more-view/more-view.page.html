@@ -1,0 +1,95 @@
+<ion-header>
+
+  <ion-toolbar color="medium">
+  
+    <ion-row>
+      
+
+      <ion-col size="4">
+        <ion-icon size="large" name="arrow-back" (click)="goMain()"></ion-icon>
+    </ion-col>
+    
+    <ion-col style="padding-top: 5px;" class="pd-top-15 small" size="4" text-center>
+      <h4 style="margin-top: 10px; font-size: 10pt;">MAIS VOTADOS</h4>
+    </ion-col>
+    
+      <ion-col size="4">
+      </ion-col>
+    
+    </ion-row>
+  
+  </ion-toolbar>
+
+  <ion-row>
+    <ion-col size="12" text-center>
+      <ion-label *ngIf="choice" style="color: #555">ESCOLHA UMA CATEGORIA</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-segment (ionChange)="segmentChanged($event)"  color="medium" [(ngModel)] = "categoria" >
+        <ion-segment-button value="Maranhense" checked>
+          <ion-label>Maranhense</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Nacional">
+          <ion-label>Nacional</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-col>
+</ion-row>
+  
+</ion-header>
+  
+<ion-content style="--background: #EEEEEE;" *ngIf="show">
+
+  <div [ngSwitch] = "categoria">
+
+      <div *ngSwitchCase="'Maranhense'">
+          <ion-card *ngFor='let filme of todo$ '>
+      
+            <ion-card-header>        
+              <ion-card-title>{{filme.name}}</ion-card-title>    
+              <ion-card-subtitle>{{filme.categoria}} | {{filme.genero}} | {{filme.origin}} | {{filme.idade}}</ion-card-subtitle>    
+            </ion-card-header>
+                
+            <ion-card-content>
+              <img [src]= 'filme.imgURL'/>
+                Sinopse: {{filme.sinopse}}
+            </ion-card-content>
+        
+            <ion-item>{{filme.resu}}%</ion-item>
+           
+          </ion-card>
+      
+        </div>
+      
+        <div *ngSwitchCase="'Nacional'" >
+          <ion-card *ngFor='let filme of todo$$ '>
+      
+            <ion-card-header>        
+              <ion-card-title>{{filme.name}}</ion-card-title>    
+              <ion-card-subtitle>{{filme.categoria}} | {{filme.genero}} | {{filme.origin}} | {{filme.idade}}</ion-card-subtitle>    
+            </ion-card-header>
+                
+            <ion-card-content>
+              <img [src]= 'filme.imgURL'/>
+                Sinopse: {{filme.sinopse}}
+            </ion-card-content>
+        
+            <ion-item>{{filme.resu}}%</ion-item>
+           
+          </ion-card>
+      
+        </div>
+
+  </div>
+
+  
+  
+
+  
+
+    
+
+</ion-content>

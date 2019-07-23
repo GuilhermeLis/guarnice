@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-toolbar color="light">
+
+    <ion-row>
+
+        <ion-col size="4">
+            <ion-icon size="large" name="arrow-back" (click)="goJuri()"></ion-icon>
+        </ion-col>
+
+      <ion-col style="padding-top: 5px;" class="pd-top-15 small" size="4" text-center>
+          <h4 style="margin-top: 10px; font-size: 10pt;">COMENTÁRIOS</h4>
+        </ion-col>
+
+      <ion-col size="4">
+      </ion-col>
+
+    </ion-row>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding >
+
+  <div>
+    <ion-card *ngFor="let comentario of todo$ | async">          
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="4">
+            <img [src]="comentario.imgURL" style="border-radius: 50%; width: 80%;" alt=""/>
+          </ion-col>
+          <ion-col size="4">
+            <strong>{{comentario.name}}</strong>
+            <ion-col size="8"><p>{{comentario.message}}</p></ion-col>
+          </ion-col>
+
+          
+          
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+</ion-content>
+  
+<ion-footer padding style="background: #EEEEEE">
+
+
+  <ion-textarea [(ngModel)]="message" type="text" style="background: #fff; border-radius: 10px;" placeholder="Comente aqui..."></ion-textarea>
+  <ion-button (click)="sendComment()" small float-right color="medium">Comentar</ion-button>
+  
+</ion-footer>

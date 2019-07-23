@@ -1,0 +1,44 @@
+// Buttons
+.square{
+    --border-radius: 0%;
+}
+// Padding
+.pd-top-10{
+    padding-top: 14px;
+}
+.pd-top-15{
+    padding-top: 15px;
+}
+.pd-top-20{
+    padding-top: 10px;
+}
+.pd-top-75{
+    padding-top: 75px;
+}
+.pd-top-150{
+    padding-top: 150px;
+}
+// Font Size
+.small{
+    font-size: small;
+}
+.large{
+    font-size: xx-large;
+}
+// Image
+.img {
+    height: 120px;
+    width: 100%;
+}
+.img2 {
+    height: 70px;
+    width: 100%;
+}
+.radial {
+    height: 60px;
+    width: 60px;
+    color: #222124;
+    margin-left: 25%;
+    border-radius: 50px;
+}
+
